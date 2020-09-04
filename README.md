@@ -2,7 +2,7 @@
 
 ### 一、NAIC - AI+遥感影像 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c1/naic-mmseg)
 
-### 二、NAIC- AI+行人重识别 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c2)
+### 二、NAIC- AI+行人重识别 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c2/naic-reid)
 
 ### 三、2020中国华录杯·数据湖算法大赛—定向算法赛（车道线识别）[here](https://github.com/jinfanhahaha/competition-baseline/tree/c3)
 
