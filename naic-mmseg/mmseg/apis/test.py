@@ -82,7 +82,7 @@ def single_gpu_test_and_save(model, data_loader, show=False, out_dir=None):
         else:
             results.append(result)
         filename = data["img_metas"][0].data[0][0]["ori_filename"].split("/")[-1][:-3]
-        img = np.array(result[0]).astype(np.uint16)
+        img = np.array(result[0]*100+100).astype(np.uint16)
         # print(img)
         # break
         cv2.imwrite(out_dir + "/" + filename + "png", img)
