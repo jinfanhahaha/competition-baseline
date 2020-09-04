@@ -131,7 +131,7 @@ class LoadAnnotations(object):
         else:
             filename = results['ann_info']['seg_map']
         gt_semantic_seg = cv2.imread(filename, cv2.IMREAD_UNCHANGED)
-        gt_semantic_seg = np.array(gt_semantic_seg) / 100
+        gt_semantic_seg = np.array(gt_semantic_seg) / 100 - 1
         # img_bytes = self.file_client.get(filename)
         # gt_semantic_seg = mmcv.imfrombytes(
         #     img_bytes, flag='unchanged',
