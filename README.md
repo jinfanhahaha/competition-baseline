@@ -1,6 +1,6 @@
 # 比赛的baseline
 
-### 一、NAIC - AI+遥感影像 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c1)
+### 一、NAIC - AI+遥感影像 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c1/naic-mmseg)
 
 ### 二、NAIC- AI+行人重识别 [here](https://github.com/jinfanhahaha/competition-baseline/tree/c2)
 
