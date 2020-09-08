@@ -222,12 +222,12 @@ class CustomDataset(Dataset):
             # gt_seg_map = mmcv.imread(
             #     img_info['ann']['seg_map'], flag='unchanged', backend='pillow')
             gt_seg_map = cv2.imread(img_info['ann']['seg_map'], cv2.IMREAD_UNCHANGED)
-            gt_seg_map = np.array(gt_seg_map) / 100 - 1
-            # if self.reduce_zero_label:
-            #     # avoid using underflow conversion
-            #     gt_seg_map[gt_seg_map == 0] = 255
-            #     gt_seg_map = gt_seg_map - 1
-            #     gt_seg_map[gt_seg_map == 254] = 255
+            gt_seg_map = np.array(gt_seg_map) / 100
+            if self.reduce_zero_label:
+                # avoid using underflow conversion
+                gt_seg_map[gt_seg_map == 0] = 255
+                gt_seg_map = gt_seg_map - 1
+                gt_seg_map[gt_seg_map == 254] = 255
 
             gt_seg_maps.append(gt_seg_map)
 
