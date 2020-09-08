@@ -131,17 +131,17 @@ class LoadAnnotations(object):
         else:
             filename = results['ann_info']['seg_map']
         gt_semantic_seg = cv2.imread(filename, cv2.IMREAD_UNCHANGED)
-        gt_semantic_seg = np.array(gt_semantic_seg) / 100 - 1
+        gt_semantic_seg = np.array(gt_semantic_seg) / 100
         # img_bytes = self.file_client.get(filename)
         # gt_semantic_seg = mmcv.imfrombytes(
         #     img_bytes, flag='unchanged',
         #     backend=self.imdecode_backend).squeeze().astype(np.uint8)
         # reduce zero_label
-        # if self.reduce_zero_label:
-        #     # avoid using underflow conversion
-        #     gt_semantic_seg[gt_semantic_seg == 0] = 255
-        #     gt_semantic_seg = gt_semantic_seg - 1
-        #     gt_semantic_seg[gt_semantic_seg == 254] = 255
+        if self.reduce_zero_label:
+            # avoid using underflow conversion
+            gt_semantic_seg[gt_semantic_seg == 0] = 255
+            gt_semantic_seg = gt_semantic_seg - 1
+            gt_semantic_seg[gt_semantic_seg == 254] = 255
         results['gt_semantic_seg'] = gt_semantic_seg
         results['seg_fields'].append('gt_semantic_seg')
         return results
